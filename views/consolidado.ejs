@@ -1,0 +1,49 @@
+<%- include('../template/header', {pagina:'Consolidado Ventas'}) %>
+<%- include('../template/navbar') %>
+<h1 align="center" class="text-white bg-dark">Consolidado</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <h2>Consolidado Ventas por Sucursales</h2>
+    <br />
+    <hr />
+    <hr />
+    <div class="col-md-auto" id="div1">
+        <div class="container">
+            <table class="table table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Ciudad</th>
+                        <th class="text-center" scope="col">Valor Total Ventas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="align-middle" scope="row">Bogotá</th>
+                        <td class="align-middle"> </td>
+                    </tr>
+                    <tr>
+                        <th class="align-middle" scope="row">Cali</th>
+                        <td class="align-middle"> </td>
+                    </tr>
+                    <tr>
+                        <th class="align-middle" scope="row">Medellin</th>
+                        <td class="align-middle"> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <h4>Total Ventas Tienda $</h4>
+                </div>
+                <div class="col-md-auto">
+                    <input type="text" name="total ventas" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+
+
+<%- include('../template/footer') %>

@@ -1,0 +1,105 @@
+<%- include('../template/header', {pagina:'Ventas'}) %>
+<%- include('../template/navbar') %>
+<h1 align="center" class="text-white bg-dark">Ventas</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <h2>Facturación de ventas</h2>
+    <br />
+    <hr />
+    <hr />
+    <div class="container-md">
+    
+        <div class="row justify-content-md-center">
+            <table>
+                <div class="col-auto">
+                    <td class="text-center" scope="col">
+                        <label class="form-label">Cedula:</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" class="Cedula">
+                    </td>
+                    <td>
+                        <button name="Consultar" class="btn btn-outline-dark">Consultar</button>
+                    </td>
+                    <td class="text-center" scope="col">
+                        <label class="form-label">Cliente:</label>
+                    </td>
+                    <td>
+                        <input type="text" disabled="disabled" class="form-control">
+                    </td>
+                    <td>
+                        <div class="mx-auto" style="width: 200px;">
+                            <label class="form-label">Consec.</label>
+                            <input type="text" class="form-control" disabled="disabled">
+                        </div>
+                    </td>
+                </div>
+            </table>
+            
+        </div>
+    </div>
+    <hr />
+    <div class="container-md">
+        <div class="mx-auto" style="width: 700px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col"><label class="form-label">Codigo Producto</label></th>
+                        <th></th>
+                        <th class="text-center" scope="col"><label class="form-label">Nombre Producto</label></th>
+                        <th class="text-center" scope="col"><label class="form-label">Cant</label></th>
+                        <th class="text-center" scope="col"><label class="form-label">Valor Total</label></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td><button name="Consultar" class="btn btn-outline-dark">Consultar</button></td>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td class="text-center"><input type="number" disabled="disabled" class="form-control"></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td><button name="Consultar" class="btn btn-outline-dark">Consultar</button></td>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td class="text-center"><input type="number" disabled="disabled" class="form-control"></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td><button name="Consultar" class="btn btn-outline-dark">Consultar</button></td>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                    <td class="text-center"><input type="number" class="form-control"></td>
+                    <td class="text-center"><input type="number" disabled="disabled" class="form-control"></td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+    </div>
+    <br />
+    <div class="container-md">
+        <div class="mx-auto" style="width: 600px;">
+            <table>
+                <tr>
+                    <th class="text-center" scope="col"><label class="form-label">Total Venta:</label></th>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th class="text-center" scope="col"><label class="form-label" class="form-control">Total IVA:</label></th>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th class="text-center" scope="col"><label class="form-label">Total con IVA:</label></th>
+                    <td class="text-center"><input type="text" disabled="disabled" class="form-control"></td>
+                    <td class="text-center"> <button class="btn btn-outline-dark">Confirmar</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+
+<%- include('../template/footer') %>

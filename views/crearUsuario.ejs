@@ -1,0 +1,78 @@
+<%- include('../template/header', {pagina:'Registro'}) %>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="logo.png" alt="" height="35" class="d-inline-block align-text-top">
+                Cadena de Tiendas 'La Generica'
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="clientes">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="ventas">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="reportes">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="consolidacion">Consolidación</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<br />
+<br />
+<hr />
+<div class="p-3 mb-2 bg-info.bg-gradient text-dark" >
+<h1 align="center" class="text-white bg-dark">Usuarios</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <h2>Registro de usuario</h2>
+    <br />
+    <div class="container">
+        <hr />
+        <div class="container">
+            <form class="form" action="principal" method="post">
+                <input type="number" class="form-control" placeholder="Cedula" name="cedula_usuario">
+                <br />
+                <input type="text" class="form-control" placeholder="Usuario" name="nombre_usuario">
+                <br />
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                <br />
+                <input type="number" class="form-control" placeholder="Telefono" name="telefono_usuario">
+                <br />
+                <input type="text" class="form-control" placeholder="Direccion" name="direccion_usuario">
+                <br />
+                <input class="form-control" list="opciones" id="sucursal" name="sucursal" placeholder="Sucursal">
+                <datalist id="opciones">
+                    <option value="Bogotá">
+                    <option value="Medellín">
+                    <option value="Cali">
+                </datalist>
+                <br />
+                <input type="password" class="form-control" placeholder="Contraseña" name="contraseña">
+                <br />
+                
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-info">--__Registrarse__--</a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="/" class="btn btn-warning">--__Cancelar__--</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include('../template/footer') %>

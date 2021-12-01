@@ -1,0 +1,68 @@
+<%- include('../template/header', {pagina:'Clientes'}) %>
+<%- include('../template/navbar') %>
+<h1 align="center" class="text-white bg-dark">Clientes</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <h2>Gestión de clientes</h2>
+    <br />
+    <hr />
+    <hr />
+    <form action="/clientes" method="post">
+        <div class="row justify-content-md-center">
+            <style type="text/css">
+                #div1 {
+                    overflow:scroll;
+                    height:28em;
+                }
+            </style>
+
+            <div class="col-md-auto" id="div1">
+                <div class="mx-auto" style="width: 70em;">
+                    <table class="table table-dark table-sm">
+                        <thead>
+                            <tr>
+                                <th class="text-center" scope="col"># ID</th>
+                                <th class="text-center" scope="col">Nombre</th>
+                                <th class="text-center" scope="col">Dirección</th>
+                                <th class="text-center" scope="col">Correo</th>
+                                <th class="text-center" scope="col">Telefono</th>
+                                <th class="text-center" scope="col">Acciónes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (listaClientes.length > 0) { %>
+                                <% listaClientes.forEach(cliente => { %>
+                                    <tr>
+                                        <th class="text-center" scope="row"><%=cliente.cedula_cliente %></th>
+                                        <td class="text-center"><%=cliente.nombre_cliente %></td>
+                                        <td class="text-center"><%=cliente.direccion_cliente%></td>
+                                        <td class="text-center"><%=cliente.correo_cliente%></td>
+                                        <td class="text-center"><%=cliente.telefono_cliente%></td>
+                                        <td class="align-middle">
+                                            <div class="row g-3 align-items-center">
+                                                <div class="col-auto">
+                                                    <a href="clientes/E<%= cliente.cedula_cliente %> " class="btn btn-outline-danger btn-sm">Eliminar</a>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="clientes/<%= cliente.cedula_cliente %> " class="btn btn-outline-primary btn-sm">Modificar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            <% } %>
+                            <tr>
+                                <th class="align-middle" scope="row"><input type="text" name="cedula_cliente" placeholder="Id" class="form-control form-control-sm"></th>
+                                <td class="align-middle"><input type="text" name="nombre_cliente" placeholder="Nombre" class="form-control form-control-sm"></td>
+                                <td class="align-middle"><input type="text" name="direccion_cliente" placeholder="Dirrección" class="form-control form-control-sm"></td>
+                                <td class="align-middle"><input type="text" name="correo_cliente" placeholder="Correo" class="form-control form-control-sm"></td>
+                                <td class="align-middle"><input type="text" name="telefono_cliente" placeholder="Telefono" class="form-control form-control-sm"></td>
+                                <td class="align-middle"> <button type="submit" class="btn btn-outline-light">Guardar/Modificar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+        </div>
+    </form>
+<%- include('../template/footer') %>

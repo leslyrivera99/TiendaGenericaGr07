@@ -1,0 +1,27 @@
+<%- include('../template/header', {pagina:'Inicio'}) %>
+<%- include('../template/navbar') %>
+<h1 align="center" class="text-white bg-dark">Gestión Cadena de Tiendas 'La Generica'</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <div class="container">
+        <hr />
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <img class="img-responsive" src="logo.png" height="500" />
+            </div>
+            <div class="col-md-auto">
+                <br />
+                <hr />
+                <% if(usuario){%> 
+                <h3>
+                    <%= title %><%= usuario.nombre %> 
+                </h3>
+                <br />
+                <h3>Sucursal: <%= usuario.sucursal %> </h3>
+                <hr />
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../template/footer') %>

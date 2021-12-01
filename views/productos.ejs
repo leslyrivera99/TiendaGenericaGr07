@@ -1,0 +1,88 @@
+<%- include('../template/header', {pagina:'Productos'}) %>
+<%- include('../template/navbar') %>
+<h1 align="center" class="text-white bg-dark">Productos</h1>
+<div class="p-3 mb-2 bg-info text-dark bg-opacity-10">
+    <h2>Gestión de Productos</h2>
+    <br />
+    <hr />
+    <hr />
+    <form action="/productos" method="post">
+        <div class="row justify-content-md-center">
+
+            <style type="text/css">
+                #div1 {
+                    overflow:scroll;
+                    height:24em;
+                }
+            </style>
+
+            <div class="col-md-auto" id="div1">
+                <table class="table table-dark table-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col">Codigo</th>
+                            <th class="text-center" scope="col">Nombre</th>
+                            <th class="text-center" scope="col">NIT Proveedor</th>
+                            <th class="text-center" scope="col">Precio Compa</th>
+                            <th class="text-center" scope="col">IVA</th>
+                            <th class="text-center" scope="col">Precio Venta</th>
+                            <th class="text-center" scope="col">Acciónes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (listaProductos.length > 0) { %>
+                            <% listaProductos.forEach(producto => { %>
+                                <tr>
+                                    <th class="text-center" scope="row"><%=producto.codigo_producto%></th>
+                                    <td class="text-center"><%=producto.nombre_producto%></td>
+                                    <td class="text-center"><%=producto.nitproveedor%></td>
+                                    <td class="text-center"><%=producto.precio_compra%></td>
+                                    <td class="text-center"><%=producto.ivacompra%></td>
+                                    <td class="text-center"><%=producto.precio_venta%></td>
+                                    <td class="align-middle">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-auto">
+                                                <a href="productos/E<%= producto.codigo_producto %> " class="btn btn-outline-danger btn-sm">Eliminar</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="productos/<%= producto.codigo_producto %> " class="btn btn-outline-primary btn-sm">Modificar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        <% } %>
+                        <tr>
+                        <tr>
+                            <th class="align-middle" scope="row"><input type="text" name="codigo_producto" placeholder="Código" class="form-control form-control-sm"></th>
+                            <td class="align-middle"><input type="text" name="nombre_producto" placeholder="Nombre" class="form-control form-control-sm"></td>
+                            <td class="align-middle"><input type="text" name="nitproveedor" placeholder="Nit" class="form-control form-control-sm"></td>
+                            <td class="align-middle"><input type="text" name="precio_compra" placeholder="Precio Compra" class="form-control form-control-sm"></td>
+                            <td class="align-middle"><input type="text" name="ivacompra" placeholder="Precio Compra" class="form-control form-control-sm"></td>
+                            <td class="align-middle"><input type="text" name="precio_venta" placeholder="Precio Venta" class="form-control form-control-sm"></td>
+                            <td class="align-middle"> <button type="submit" class="btn btn-outline-light">Guardar/Modificar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+        </div>
+    </form>
+    <br />
+    <form action="/subirProductos" method="get">
+        <div class="mb-3">
+            <input class="form-control" type="file" id="formFile">
+            
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <br />
+                    <label for="formFile" class="form-label"><h5 align="center">Cargar Archivo a Productos: </h5></label>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-outline-success">Cargar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<%- include('../template/footer') %>

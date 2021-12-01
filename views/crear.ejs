@@ -1,0 +1,27 @@
+<%- include('../template/header', {pagina:'crear'}) %>
+<%- include('../template/navbar') %>
+    <div class="container">
+        <hr />
+        <div class="container">
+            <h1 align="center">Crear Clientes</h1>
+        </div>
+        <div class="container">
+            <form class="form" action="/clientes" method="post">
+                <input type="number" class="form-control" placeholder="Cedula" name="cedula_cliente">
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre_cliente">
+                <input type="text" class="form-control" placeholder="Direccion" name="direccion_cliente">
+                <input type="text" class="form-control" placeholder="Correo" name="correo_cliente">
+                <input type="number" class="form-control" placeholder="Telefono" name="telefono_cliente">
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-info">--__Crear__--</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="reset" class="btn btn-warning">--__Cancelar__--</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<%- include('../template/footer') %>
